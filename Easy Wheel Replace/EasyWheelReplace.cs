@@ -69,11 +69,11 @@ namespace Easy_Wheel_Replace
 
         private void BTN_ReplaceWheels_Click(object sender, EventArgs e)
         {
-            ProgressBar.Enabled = true;
             if (targetedwheelsindex != 69420 && wantedwheelsindex != 69420)
             {
                 if(Directory.Exists(@"C:\Users\" + Environment.UserName + @"\Documents\EasyWheelSwapper\Temp"))
                 {
+                    BTN_ReplaceWheels.Enabled = false;
                     swapwheels();
                 }
                 else
@@ -81,6 +81,7 @@ namespace Easy_Wheel_Replace
                     Directory.CreateDirectory(@"C:\Users\" + Environment.UserName + @"\Documents\EasyWheelSwapper");
                     Directory.CreateDirectory(@"C:\Users\" + Environment.UserName + @"\Documents\EasyWheelSwapper\Temp");
                     Directory.CreateDirectory(@"C:\Users\" + Environment.UserName + @"\Documents\EasyWheelSwapper\OriginalWheelBackup");
+                    BTN_ReplaceWheels.Enabled=false;
                     swapwheels();
                 }
             }
@@ -99,6 +100,7 @@ namespace Easy_Wheel_Replace
         }
         void swapwheels()
         {
+            
             var wantedwheelpath = WantedWheelsList[wantedwheelsindex];
             var targetwheelpath = TargetWheelsList[targetedwheelsindex];
             var targetmedianame = LST_TargetWheels.SelectedItem.ToString();
@@ -165,7 +167,7 @@ namespace Easy_Wheel_Replace
             //TXT_Progress.Items.Add("Deleting contents of: " + tempfolder);
             Directory.Delete(tempfolder, true);
             Directory.CreateDirectory(tempfolder);
-            ProgressBar.Style = ProgressBarStyle.Continuous;
+            BTN_ReplaceWheels.Enabled = true;
         }
     }
 }

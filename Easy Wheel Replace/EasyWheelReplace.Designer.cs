@@ -35,7 +35,6 @@ namespace Easy_Wheel_Replace
             this.LST_WantedWheels = new System.Windows.Forms.ComboBox();
             this.LST_TargetWheels = new System.Windows.Forms.ComboBox();
             this.BTN_ReplaceWheels = new System.Windows.Forms.Button();
-            this.ProgressBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // OpenFH5Folder
@@ -105,7 +104,7 @@ namespace Easy_Wheel_Replace
             this.BTN_ReplaceWheels.FlatAppearance.BorderSize = 0;
             this.BTN_ReplaceWheels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_ReplaceWheels.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BTN_ReplaceWheels.Location = new System.Drawing.Point(12, 243);
+            this.BTN_ReplaceWheels.Location = new System.Drawing.Point(12, 240);
             this.BTN_ReplaceWheels.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.BTN_ReplaceWheels.Name = "BTN_ReplaceWheels";
             this.BTN_ReplaceWheels.Size = new System.Drawing.Size(310, 67);
@@ -114,24 +113,12 @@ namespace Easy_Wheel_Replace
             this.BTN_ReplaceWheels.UseVisualStyleBackColor = false;
             this.BTN_ReplaceWheels.Click += new System.EventHandler(this.BTN_ReplaceWheels_Click);
             // 
-            // ProgressBar
-            // 
-            this.ProgressBar.Enabled = false;
-            this.ProgressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ProgressBar.Location = new System.Drawing.Point(12, 323);
-            this.ProgressBar.MarqueeAnimationSpeed = 10;
-            this.ProgressBar.Name = "ProgressBar";
-            this.ProgressBar.Size = new System.Drawing.Size(310, 34);
-            this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.ProgressBar.TabIndex = 5;
-            // 
             // EasyWheelReplace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(33)))));
-            this.ClientSize = new System.Drawing.Size(334, 369);
-            this.Controls.Add(this.ProgressBar);
+            this.ClientSize = new System.Drawing.Size(334, 326);
             this.Controls.Add(this.BTN_ReplaceWheels);
             this.Controls.Add(this.LST_TargetWheels);
             this.Controls.Add(this.LST_WantedWheels);
@@ -154,7 +141,6 @@ namespace Easy_Wheel_Replace
         private System.Windows.Forms.ComboBox LST_TargetWheels;
         private System.Windows.Forms.Button BTN_ReplaceWheels;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ProgressBar ProgressBar;
     }
 }
 

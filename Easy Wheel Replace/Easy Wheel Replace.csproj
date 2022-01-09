@@ -5,6 +5,15 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>Easy_Wheel_Replace</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <SignAssembly>false</SignAssembly>
+    <Authors>ItsLogic</Authors>
+    <Product>ItsLogic</Product>
+    <Description>Easy Wheel Replace v1.0</Description>
+    <PackageProjectUrl>https://github.com/ItsLogic/Easy-Wheel-Replace</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
 </Project>
