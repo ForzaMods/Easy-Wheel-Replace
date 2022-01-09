@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Easy Wheel Replace", "Easy Wheel Replace\Easy Wheel Replace.csproj", "{E5F225FD-CB5E-46ED-97B5-1920179D0799}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5F225FD-CB5E-46ED-97B5-1920179D0799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F225FD-CB5E-46ED-97B5-1920179D0799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F225FD-CB5E-46ED-97B5-1920179D0799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F225FD-CB5E-46ED-97B5-1920179D0799}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBF81566-E2D6-4D79-A46C-7621601BEF2E}
+	EndGlobalSection
+EndGlobal
