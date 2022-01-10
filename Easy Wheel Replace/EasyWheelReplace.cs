@@ -31,24 +31,33 @@ namespace Easy_Wheel_Replace
             if (PathCorrect==false)
             {
                 OpenFH5Folder.ShowDialog();
-                GamePath = new FileInfo(OpenFH5Folder.FileName).DirectoryName;
-                if (File.Exists(GamePath + "\\ForzaHorizon5.exe"))
+                if (OpenFH5Folder.FileName != "")
                 {
-                    TXT_Gamepath.Text = new FileInfo(OpenFH5Folder.FileName).DirectoryName;
-                    PathCorrect = true;
-                    PopulateDropdown();
+                    GamePath = new FileInfo(OpenFH5Folder.FileName).DirectoryName;
+
+                    if (File.Exists(GamePath + "\\ForzaHorizon5.exe"))
+                    {
+                        TXT_Gamepath.Text = new FileInfo(OpenFH5Folder.FileName).DirectoryName;
+                        PathCorrect = true;
+                        PopulateDropdown();
+                    }
+                    else
+                    {
+                        PathCorrect = false;
+                        MessageBox.Show("Folder selected does not contain the ForzaHorizon5.exe file \nTry again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
                     PathCorrect = false;
-                    MessageBox.Show("Folder selected does not contain the ForzaHorizon5.exe file \nTry again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No location selected. \nTry again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
+              
             }
             else
                 MessageBox.Show("Game Folder already selected", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
+        
         private void PopulateDropdown()
         {
             WantedWheelsList = Directory.GetFiles(GamePath + "\\media\\cars");
