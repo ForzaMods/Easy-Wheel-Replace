@@ -60,7 +60,9 @@ namespace Easy_Wheel_Replace
                 try
                 {
                     File.Delete(Globalvars.basegamedir + @"\media\stripped\mediaoverride\rc0\cars\_library\" + @"\" + LST_BackedUpList.SelectedItem);
-                    logger.Log("Delete swapped wheel");
+                    logger.Log("Delete swapped wheel from rc0");
+                    File.Delete(BaseDir + @"\OriginalWheelBackup" + @"\" + LST_BackedUpList.SelectedItem);
+                    logger.Log("Delete swapped wheel from the normal folder");
                     logger.Log("Successfully reverted");
                     LST_BackedUpList.Items.Clear();
                     List();

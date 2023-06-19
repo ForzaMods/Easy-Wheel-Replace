@@ -85,7 +85,11 @@ namespace Easy_Wheel_Replace
                 LST_TargetWheels.Enabled = false;
                 LST_WantedWheels.Enabled = false;
                 BTN_ReplaceWheels.Enabled = false;
+                RevertWheels.Enabled = false;
             }
+
+            if(File.Exists(BaseDir + @"\OriginalWheelBackup"))
+                RevertWheels.Enabled = true;
             #endregion
         }
 
@@ -293,6 +297,7 @@ namespace Easy_Wheel_Replace
             BTN_ReplaceWheels.Enabled = true;
             StatusBar.Value = 100;
             StatusBar.Enabled = false;
+            RevertWheels.Enabled = true;
 
             DialogResult dialogResult = MessageBox.Show("Do you wanna see the log file of the swapped wheel?", "Logging", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
