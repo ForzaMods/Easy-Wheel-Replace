@@ -59,17 +59,14 @@ namespace Easy_Wheel_Replace
                 logger.Log("Starting revert");
                 try
                 {
-                    File.Delete(Globalvars.basegamedir + @"\media\cars\_library\scene\wheels" + @"\" + LST_BackedUpList.SelectedItem);
+                    File.Delete(Globalvars.basegamedir + @"\media\stripped\mediaoverride\rc0\cars\_library\" + @"\" + LST_BackedUpList.SelectedItem);
                     logger.Log("Delete swapped wheel");
-                    File.Copy(BaseDir + @"\OriginalWheelBackup" + @"\" + LST_BackedUpList.SelectedItem, Globalvars.basegamedir + @"\media\cars\_library\scene\wheels" + @"\" + LST_BackedUpList.SelectedItem);
-                    logger.Log("Copy original wheel");
-                    File.Delete(BaseDir + @"\OriginalWheelBackup" + @"\" + LST_BackedUpList.SelectedItem);
-                    logger.Log("Delete original wheel from the backups");
                     logger.Log("Successfully reverted");
                     LST_BackedUpList.Items.Clear();
                     List();
                     LST_BackedUpList.SelectedIndex = 0;
-                catch(Exception ex) { MessageBox.Show(ex.Message); logger.Log(ex.Message); }
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); logger.Log(ex.Message); }
 
                 DialogResult dialogResult = MessageBox.Show("Do you wanna see the log file of the swapped wheel?", "Logging", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -77,7 +74,6 @@ namespace Easy_Wheel_Replace
                     Process.Start(new ProcessStartInfo(logfile) { UseShellExecute = true });
                 }
             }
-        }
             else if (selected == 123)
                 MessageBox.Show("Select a wheel first smh");
         }

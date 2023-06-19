@@ -40,6 +40,7 @@ namespace Easy_Wheel_Replace
         int wantedwheelsindex = 69420;
         int targetedwheelsindex = 69420;
         string BaseDir;
+        string targerwheelrc0path;
         #endregion
 
         public EasyWheelReplace()
@@ -194,6 +195,9 @@ namespace Easy_Wheel_Replace
             targetwheelpath = TargetWheelsList[targetedwheelsindex];
             var targetmedianame = LST_TargetWheels.SelectedItem.ToString();
             var wantedmedianame = LST_WantedWheels.SelectedItem.ToString();
+            targerwheelrc0path = GamePath + @"\media\stripped\mediaoverride\rc0\cars\_library\scene\wheels";
+            if (!File.Exists(targerwheelrc0path))
+                Directory.CreateDirectory(targerwheelrc0path);
             var logfile = BaseDir + @"\Logs" + @"\" + targetmedianame + "." + DateTime.UtcNow.ToString("yyyy-MM-dd HH-mm") + ".log";
             using (File.Create(logfile)) { };
             Logger logger = new Logger(logfile);
@@ -280,8 +284,8 @@ namespace Easy_Wheel_Replace
                 catch (Exception ex) { MessageBox.Show(ex.Message); logger.Log("Failed at:" + ex.Message); revert(); }
             }
             StatusBar.Value = 85;
-            logger.Log("Creating new zip to replace: " + targetwheelpath);
-            ZipFile.CreateFromDirectory(tempfolder + @"\N\", targetwheelpath);
+            logger.Log("Creating new zip in: " + targerwheelrc0path + @"\" + LST_TargetWheels.SelectedItem);
+            ZipFile.CreateFromDirectory(tempfolder + @"\N\", targerwheelrc0path + @"\" + LST_TargetWheels.SelectedItem);
 
             logger.Log("Deleting contents of: " + tempfolder);
             Directory.Delete(tempfolder, true);
@@ -299,7 +303,7 @@ namespace Easy_Wheel_Replace
 
         private void revert()
         {
-            File.Copy(BaseDir + @"\OriginalWheelBackup" + @"\" + LST_TargetWheels.SelectedItem, targetwheelpath);
+            File.Delete(targerwheelrc0path + @"\" + LST_TargetWheels.SelectedItem);
         }
 
         private void RevertWheels_Click(object sender, EventArgs e)
