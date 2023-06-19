@@ -29,118 +29,140 @@ namespace Easy_Wheel_Replace
         /// </summary>
         private void InitializeComponent()
         {
-            this.OpenFH5Folder = new System.Windows.Forms.OpenFileDialog();
-            this.BTN_GameFolder = new System.Windows.Forms.Button();
-            this.TXT_Gamepath = new System.Windows.Forms.TextBox();
-            this.LST_WantedWheels = new System.Windows.Forms.ComboBox();
-            this.LST_TargetWheels = new System.Windows.Forms.ComboBox();
-            this.BTN_ReplaceWheels = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // OpenFH5Folder
-            // 
-            this.OpenFH5Folder.Title = "Select Any File In the FH5 Game Folder";
+            BTN_GameFolder = new System.Windows.Forms.Button();
+            TXT_Gamepath = new System.Windows.Forms.TextBox();
+            LST_WantedWheels = new System.Windows.Forms.ComboBox();
+            LST_TargetWheels = new System.Windows.Forms.ComboBox();
+            BTN_ReplaceWheels = new System.Windows.Forms.Button();
+            RevertWheels = new System.Windows.Forms.Button();
+            StatusBar = new System.Windows.Forms.ProgressBar();
+            SuspendLayout();
             // 
             // BTN_GameFolder
             // 
-            this.BTN_GameFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.BTN_GameFolder.FlatAppearance.BorderSize = 0;
-            this.BTN_GameFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_GameFolder.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BTN_GameFolder.Location = new System.Drawing.Point(12, 13);
-            this.BTN_GameFolder.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.BTN_GameFolder.Name = "BTN_GameFolder";
-            this.BTN_GameFolder.Size = new System.Drawing.Size(310, 67);
-            this.BTN_GameFolder.TabIndex = 0;
-            this.BTN_GameFolder.Text = "Select Game Location";
-            this.BTN_GameFolder.UseVisualStyleBackColor = false;
-            this.BTN_GameFolder.Click += new System.EventHandler(this.button1_Click);
+            BTN_GameFolder.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            BTN_GameFolder.FlatAppearance.BorderSize = 0;
+            BTN_GameFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BTN_GameFolder.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            BTN_GameFolder.Location = new System.Drawing.Point(12, 13);
+            BTN_GameFolder.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            BTN_GameFolder.Name = "BTN_GameFolder";
+            BTN_GameFolder.Size = new System.Drawing.Size(175, 67);
+            BTN_GameFolder.TabIndex = 0;
+            BTN_GameFolder.Text = "Select Game Location";
+            BTN_GameFolder.UseVisualStyleBackColor = false;
+            BTN_GameFolder.Click += button1_Click;
             // 
             // TXT_Gamepath
             // 
-            this.TXT_Gamepath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.TXT_Gamepath.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TXT_Gamepath.ForeColor = System.Drawing.Color.White;
-            this.TXT_Gamepath.Location = new System.Drawing.Point(12, 100);
-            this.TXT_Gamepath.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.TXT_Gamepath.Name = "TXT_Gamepath";
-            this.TXT_Gamepath.ReadOnly = true;
-            this.TXT_Gamepath.Size = new System.Drawing.Size(310, 27);
-            this.TXT_Gamepath.TabIndex = 1;
+            TXT_Gamepath.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            TXT_Gamepath.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            TXT_Gamepath.ForeColor = System.Drawing.Color.White;
+            TXT_Gamepath.Location = new System.Drawing.Point(12, 100);
+            TXT_Gamepath.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            TXT_Gamepath.Name = "TXT_Gamepath";
+            TXT_Gamepath.ReadOnly = true;
+            TXT_Gamepath.Size = new System.Drawing.Size(310, 27);
+            TXT_Gamepath.TabIndex = 1;
             // 
             // LST_WantedWheels
             // 
-            this.LST_WantedWheels.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.LST_WantedWheels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LST_WantedWheels.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LST_WantedWheels.ForeColor = System.Drawing.Color.White;
-            this.LST_WantedWheels.FormattingEnabled = true;
-            this.LST_WantedWheels.Location = new System.Drawing.Point(12, 147);
-            this.LST_WantedWheels.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.LST_WantedWheels.Name = "LST_WantedWheels";
-            this.LST_WantedWheels.Size = new System.Drawing.Size(310, 28);
-            this.LST_WantedWheels.TabIndex = 2;
-            this.LST_WantedWheels.Text = "Wanted Wheels";
-            this.LST_WantedWheels.SelectedIndexChanged += new System.EventHandler(this.LST_WantedWheels_SelectedIndexChanged);
+            LST_WantedWheels.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            LST_WantedWheels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            LST_WantedWheels.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            LST_WantedWheels.ForeColor = System.Drawing.Color.White;
+            LST_WantedWheels.FormattingEnabled = true;
+            LST_WantedWheels.Location = new System.Drawing.Point(12, 147);
+            LST_WantedWheels.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            LST_WantedWheels.Name = "LST_WantedWheels";
+            LST_WantedWheels.Size = new System.Drawing.Size(310, 28);
+            LST_WantedWheels.TabIndex = 2;
+            LST_WantedWheels.Text = "Wanted Wheels";
+            LST_WantedWheels.SelectedIndexChanged += LST_WantedWheels_SelectedIndexChanged;
             // 
             // LST_TargetWheels
             // 
-            this.LST_TargetWheels.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.LST_TargetWheels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LST_TargetWheels.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LST_TargetWheels.ForeColor = System.Drawing.Color.White;
-            this.LST_TargetWheels.FormattingEnabled = true;
-            this.LST_TargetWheels.Location = new System.Drawing.Point(12, 195);
-            this.LST_TargetWheels.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.LST_TargetWheels.Name = "LST_TargetWheels";
-            this.LST_TargetWheels.Size = new System.Drawing.Size(310, 28);
-            this.LST_TargetWheels.TabIndex = 3;
-            this.LST_TargetWheels.Text = "Target Wheels";
-            this.LST_TargetWheels.SelectedIndexChanged += new System.EventHandler(this.LST_TargetWheels_SelectedIndexChanged);
+            LST_TargetWheels.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            LST_TargetWheels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            LST_TargetWheels.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            LST_TargetWheels.ForeColor = System.Drawing.Color.White;
+            LST_TargetWheels.FormattingEnabled = true;
+            LST_TargetWheels.Location = new System.Drawing.Point(12, 195);
+            LST_TargetWheels.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            LST_TargetWheels.Name = "LST_TargetWheels";
+            LST_TargetWheels.Size = new System.Drawing.Size(310, 28);
+            LST_TargetWheels.TabIndex = 3;
+            LST_TargetWheels.Text = "Target Wheels";
+            LST_TargetWheels.SelectedIndexChanged += LST_TargetWheels_SelectedIndexChanged;
             // 
             // BTN_ReplaceWheels
             // 
-            this.BTN_ReplaceWheels.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.BTN_ReplaceWheels.FlatAppearance.BorderSize = 0;
-            this.BTN_ReplaceWheels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_ReplaceWheels.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BTN_ReplaceWheels.Location = new System.Drawing.Point(12, 240);
-            this.BTN_ReplaceWheels.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.BTN_ReplaceWheels.Name = "BTN_ReplaceWheels";
-            this.BTN_ReplaceWheels.Size = new System.Drawing.Size(310, 67);
-            this.BTN_ReplaceWheels.TabIndex = 4;
-            this.BTN_ReplaceWheels.Text = "Replace Wheels";
-            this.BTN_ReplaceWheels.UseVisualStyleBackColor = false;
-            this.BTN_ReplaceWheels.Click += new System.EventHandler(this.BTN_ReplaceWheels_Click);
+            BTN_ReplaceWheels.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            BTN_ReplaceWheels.FlatAppearance.BorderSize = 0;
+            BTN_ReplaceWheels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BTN_ReplaceWheels.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            BTN_ReplaceWheels.Location = new System.Drawing.Point(12, 240);
+            BTN_ReplaceWheels.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            BTN_ReplaceWheels.Name = "BTN_ReplaceWheels";
+            BTN_ReplaceWheels.Size = new System.Drawing.Size(310, 67);
+            BTN_ReplaceWheels.TabIndex = 4;
+            BTN_ReplaceWheels.Text = "Replace Wheels";
+            BTN_ReplaceWheels.UseVisualStyleBackColor = false;
+            BTN_ReplaceWheels.Click += BTN_ReplaceWheels_Click;
+            // 
+            // RevertWheels
+            // 
+            RevertWheels.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            RevertWheels.FlatAppearance.BorderSize = 0;
+            RevertWheels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            RevertWheels.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            RevertWheels.Location = new System.Drawing.Point(193, 13);
+            RevertWheels.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            RevertWheels.Name = "RevertWheels";
+            RevertWheels.Size = new System.Drawing.Size(129, 67);
+            RevertWheels.TabIndex = 6;
+            RevertWheels.Text = "Revert Swapped Wheels";
+            RevertWheels.UseVisualStyleBackColor = false;
+            RevertWheels.Click += RevertWheels_Click;
+            // 
+            // StatusBar
+            // 
+            StatusBar.Enabled = false;
+            StatusBar.Location = new System.Drawing.Point(12, 320);
+            StatusBar.Name = "StatusBar";
+            StatusBar.Size = new System.Drawing.Size(310, 23);
+            StatusBar.TabIndex = 7;
             // 
             // EasyWheelReplace
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(33)))));
-            this.ClientSize = new System.Drawing.Size(334, 326);
-            this.Controls.Add(this.BTN_ReplaceWheels);
-            this.Controls.Add(this.LST_TargetWheels);
-            this.Controls.Add(this.LST_WantedWheels);
-            this.Controls.Add(this.TXT_Gamepath);
-            this.Controls.Add(this.BTN_GameFolder);
-            this.ForeColor = System.Drawing.Color.White;
-            this.Name = "EasyWheelReplace";
-            this.Text = "Easy Wheel Swap";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(30, 30, 33);
+            ClientSize = new System.Drawing.Size(334, 353);
+            Controls.Add(StatusBar);
+            Controls.Add(RevertWheels);
+            Controls.Add(BTN_ReplaceWheels);
+            Controls.Add(LST_TargetWheels);
+            Controls.Add(LST_WantedWheels);
+            Controls.Add(TXT_Gamepath);
+            Controls.Add(BTN_GameFolder);
+            ForeColor = System.Drawing.Color.White;
+            Name = "EasyWheelReplace";
+            Text = "Easy Wheel Swap";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.OpenFileDialog OpenFH5Folder;
         private System.Windows.Forms.Button BTN_GameFolder;
         private System.Windows.Forms.TextBox TXT_Gamepath;
         private System.Windows.Forms.ComboBox LST_WantedWheels;
         private System.Windows.Forms.ComboBox LST_TargetWheels;
         private System.Windows.Forms.Button BTN_ReplaceWheels;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button RevertWheels;
+        private System.Windows.Forms.ProgressBar StatusBar;
     }
 }
 
