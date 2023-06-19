@@ -40,7 +40,6 @@ namespace Easy_Wheel_Replace
         int wantedwheelsindex = 69420;
         int targetedwheelsindex = 69420;
         string BaseDir;
-        Logger logger = new Logger("C:\\Logs\\logfile.txt");
         #endregion
 
         public EasyWheelReplace()
