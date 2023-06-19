@@ -16,25 +16,15 @@ The tool will back up the target wheel zip into your documents at `Documents\Eas
 
 
 # Requirements
-Honestly I have no idea. Its just .NET 5 so whatever that needs I guess.
+Honestly I have no idea. Its just .NET 7 so whatever that needs I guess.
 
 # Known issues
-Program will just fail if you dont have your documents at the standard location on C:
-
-There is no error catching so if something does fail it will fail very badly.
 
 Minimal checks are done for textures in textures.zip or textures_pri_45.zip. It only uses the first file.
 
 Materials are currently ignored.
 
-Does not work on "welcome pack" cars due to models being named differently to the actual media name
-
 # TODO
-1. Create a proper progress log to show to the user (currently commented out)
 
-2. Add more options like a custom backup location and if the user wants the front or rear car wheel if the car has two.
-
-3. Save the game folder so it doesnt need to be selected on each start.
-
-4. A quick way to restore wheel zips to their original state using the files in OriginalWheelBackups.
+Add more options like a custom backup location and if the user wants the front or rear car wheel if the car has two.
 
