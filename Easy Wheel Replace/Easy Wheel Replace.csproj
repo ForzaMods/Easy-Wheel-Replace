@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
     <RootNamespace>Easy_Wheel_Replace</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <SignAssembly>false</SignAssembly>
@@ -10,10 +10,15 @@
     <Product>ItsLogic</Product>
     <Description>Easy Wheel Replace v1.0</Description>
     <PackageProjectUrl>https://github.com/ItsLogic/Easy-Wheel-Replace</PackageProjectUrl>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ini-parser" Version="2.5.2" />
+  </ItemGroup>
 
 </Project>
