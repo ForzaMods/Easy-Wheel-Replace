@@ -4,7 +4,7 @@ A small tool written in c# to automate the process of swapping rim model files f
 # How to use:
 Download the tool from releases or build yourself.
 
-After opening click on "Select Game Location" and select any file inside the root game folder with the .exe inside. (for people on microsoft store who have file access you need to choose any file other than the main game .exe)
+After opening click on "Select Game Location" and select the root game folder
 
 Select your Wanted Wheels from the dropdown menu. These will be the wheels you want to use.
 
